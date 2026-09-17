@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>A Little Question 💗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{width:100%;height:100%;overflow:hidden}
+body{font-family:'Quicksand',sans-serif;background:#ff8fbe}
+#app{width:100%;height:100dvh;position:relative;overflow:hidden;background:linear-gradient(to bottom,#ff9bc5,#fda1c8 48%,#ff8ebc)}
+#app:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.12;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:7px 7px}
+.cloud{position:absolute;width:150px;height:55px;background:#fff;border-radius:40px;opacity:.82;filter:drop-shadow(0 3px 0 rgba(205,75,130,.18))}
+.cloud:before,.cloud:after{content:"";position:absolute;background:#fff;border-radius:50%}
+.cloud:before{width:65px;height:65px;left:18px;bottom:15px}.cloud:after{width:75px;height:75px;right:20px;bottom:10px}
+.cloud1{top:11%;left:-35px;transform:scale(.65)}.cloud2{top:8%;right:-35px;transform:scale(.75)}
+.cloud3{bottom:23%;left:-55px;transform:scale(.55);opacity:.55}.cloud4{bottom:25%;right:-55px;transform:scale(.65);opacity:.55}
+.star{position:absolute;color:#fff;font-size:22px;opacity:.8;animation:twinkle 2.5s infinite alternate}
+.s1{top:18%;left:9%}.s2{top:30%;right:11%}.s3{top:43%;left:7%}.s4{top:52%;right:8%}.s5{top:13%;left:48%}
+@keyframes twinkle{from{opacity:.3;transform:scale(.8)}to{opacity:1;transform:scale(1.15)}}
+.float-heart{position:absolute;color:#fff;opacity:.7;font-size:18px;animation:floatUp 6s linear infinite}
+@keyframes floatUp{0%{transform:translateY(30px);opacity:0}15%{opacity:.8}100%{transform:translateY(-180px);opacity:0}}
+.landscape{position:absolute;bottom:0;width:100%;height:24%;overflow:hidden}
+.mountain{position:absolute;bottom:0;width:100%;height:95px;background:#f6a5c5;clip-path:polygon(0 75%,8% 57%,16% 68%,25% 40%,34% 65%,43% 48%,52% 70%,61% 42%,70% 62%,80% 35%,89% 65%,100% 45%,100% 100%,0 100%)}
+.mountain2{height:75px;background:#ef8eb7;opacity:.75}
+.ground{position:absolute;bottom:0;left:0;width:100%;height:45px;background:#df4d91}
+.ground:before{content:"";position:absolute;top:-14px;width:100%;height:25px;background:repeating-linear-gradient(90deg,transparent 0 7px,#d74389 7px 11px)}
+.page{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 22px 100px;opacity:0;pointer-events:none;transform:translateY(15px) scale(.97);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1)}
+.page.active{opacity:1;pointer-events:auto;transform:translateY(0) scale(1)}
+.pixel-card{width:105px;height:105px;background:#111;border:5px solid #fff;box-shadow:0 0 0 4px #541634,7px 7px 0 rgba(108,25,70,.35);display:flex;justify-content:center;align-items:center;margin-bottom:28px;animation:cardFloat 3s ease-in-out infinite}
+@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.pixel-art{font-size:30px;filter:drop-shadow(2px 2px 0 #fff)}
+.title{text-align:center;color:#c92f70;font-family:'Playfair Display',serif;font-weight:700;letter-spacing:.6px;font-size:30px;line-height:1.18;text-shadow:2px 2px 0 #fff,4px 4px 0 rgba(124,25,72,.2);max-width:330px;margin-bottom:25px}
+.subtitle{font-family:'Quicksand',sans-serif;font-weight:600;color:#8d2455;font-size:17px;letter-spacing:.2px;line-height:1.45;text-align:center;margin-top:-15px;margin-bottom:18px}
+button{font-family:'Quicksand',sans-serif;font-weight:700;letter-spacing:.5px;cursor:pointer;border:none;touch-action:manipulation}
+.yes{background:#f50c6d;color:white;font-size:19px;padding:19px 28px;min-width:145px;border:4px solid white;box-shadow:0 0 0 4px #a20c4c,7px 7px 0 rgba(90,16,54,.3);transition:.15s}
+.yes:active{transform:translate(4px,4px);box-shadow:0 0 0 4px #a20c4c}
+.no{background:#ffd8e8;color:#a93365;border:3px solid #b94270;padding:8px 14px;font-size:12px;margin-left:20px;box-shadow:3px 3px 0 rgba(130,30,75,.2);transition:.2s}
+.continue{background:#fff;color:#db4c86;border:3px solid #db4c86;padding:12px 21px;font-size:12px;box-shadow:4px 4px 0 rgba(120,30,75,.2);margin-top:10px}
+.date-input{width:190px;padding:12px;background:#fff;color:#d83275;border:3px solid #d83275;outline:none;font-family:'Quicksand',sans-serif;font-weight:600;font-size:17px;text-align:center;box-shadow:4px 4px 0 rgba(100,20,60,.2);margin-bottom:15px}
+.activity-grid{width:min(340px,100%);display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:15px}
+.activity{background:#fff;color:#d72e73;border:2px solid #e14b85;padding:11px 5px;min-height:42px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:14px;line-height:1.25;box-shadow:3px 3px 0 rgba(120,20,70,.15);transition:.15s}
+.activity.selected{background:#f72878;color:white;transform:translate(2px,2px);box-shadow:none}
+.final-card{width:min(350px,94vw);background:#fff7fb;border:4px solid #e66a99;box-shadow:7px 7px 0 rgba(115,25,70,.2);padding:25px 20px;transform:rotate(-1deg);position:relative}
+.final-card:before{content:"";position:absolute;inset:6px;border:2px solid #f0a0bd;pointer-events:none}
+.final-title{font-family:'Caveat',cursive;color:#d52c72;font-weight:700;font-size:34px;letter-spacing:.5px;margin-bottom:15px;text-align:center}
+.message{position:relative;font-family:'Quicksand',sans-serif;font-weight:500;color:#632445;font-size:17px;letter-spacing:.15px;word-spacing:3px;line-height:1.75;white-space:pre-wrap;overflow-wrap:break-word;min-height:190px}
+.signature{font-family:'Caveat',cursive;text-align:right;color:#d52c72;font-weight:700;font-size:27px;letter-spacing:.3px;margin-top:12px}
+.yay{font-family:'Playfair Display',serif;font-weight:700;font-size:38px;letter-spacing:1px;color:#f42678;text-shadow:3px 3px white,6px 6px rgba(120,20,70,.2);animation:yay 1s infinite alternate}
+@keyframes yay{from{transform:scale(1)}to{transform:scale(1.08)}}
+.burst{position:absolute;inset:0;pointer-events:none}
+.burst-heart{position:absolute;left:50%;top:50%;font-size:24px;animation:burst 1.2s ease-out forwards}
+@keyframes burst{from{transform:translate(-50%,-50%) scale(.3);opacity:1}to{transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) rotate(var(--r)) scale(1.3);opacity:0}}
+@media(max-height:650px){.pixel-card{width:80px;height:80px;margin-bottom:18px}.pixel-art{font-size:25px}.title{font-size:25px;margin-bottom:18px}.page{padding-bottom:70px}}
+@media(min-width:600px){.page{max-width:500px;left:50%;transform:translateX(-50%) translateY(15px) scale(.97)}.page.active{transform:translateX(-50%) translateY(0) scale(1)}}
+</style>
+</head>
+<body>
+<div id="app">
+<div class="cloud cloud1"></div><div class="cloud cloud2"></div><div class="cloud cloud3"></div><div class="cloud cloud4"></div>
+<div class="star s1">✦</div><div class="star s2">✧</div><div class="star s3">✦</div><div class="star s4">✧</div><div class="star s5">✦</div>
+<div class="landscape"><div class="mountain"></div><div class="mountain mountain2"></div><div class="ground"></div></div>
+
+<section class="page active" id="page1">
+<div class="pixel-card"><div class="pixel-art">૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა</div></div>
+<h1 class="title">will you go<br>out with me?</h1>
+<div><button class="yes" onclick="sayYes()">YES</button><button class="no" id="noButton" onclick="moveNo()">No</button></div>
+</section>
+
+<section class="page" id="page2">
+<div class="pixel-card"><div class="pixel-art">૮ ˶ᵔ ᵕ ᵔ˶ ა</div></div>
+<div class="yay">YAY!</div><p class="subtitle">I knew you'd say yes ♡</p>
+<button class="continue" onclick="showPage(3)">CONTINUE →</button>
+</section>
+
+<section class="page" id="page3">
+<div class="pixel-card"><div class="pixel-art">♡</div></div>
+<h1 class="title">PICK A DATE</h1><p class="subtitle">choose a day for our little adventure ♡</p>
+<input id="date" class="date-input" type="date">
+<button class="continue" onclick="confirmDate()">CONTINUE →</button>
+</section>
+
+<section class="page" id="page4">
+<div class="pixel-card"><div class="pixel-art">૮₍ ˃ ⤙ ˂ ₎ა</div></div>
+<h1 class="title" style="font-size:13px">WHAT WOULD YOU LIKE TO<br>DO?</h1>
+<div class="activity-grid">
+<button class="activity" onclick="selectActivity(this)">DINNER DATE</button>
+<button class="activity" onclick="selectActivity(this)">MOVIE NIGHT</button>
+<button class="activity" onclick="selectActivity(this)">COFFEE & WALK</button>
+<button class="activity" onclick="selectActivity(this)">PICNIC</button>
+<button class="activity" onclick="selectActivity(this)">MINI GOLF</button>
+<button class="activity" onclick="selectActivity(this)">ARCADE</button>
+<button class="activity" onclick="selectActivity(this)">LONG DRIVE</button>
+<button class="activity" onclick="selectActivity(this)">SURPRISE ME</button>
+</div>
+<button class="continue" onclick="finishDate()">LOCK IT IN ♡</button>
+</section>
+
+<section class="page" id="page5">
+<div class="pixel-card"><div class="pixel-art">ʕ•ᴥ•ʔ♡</div></div>
+<h1 class="title">IT'S A DATE!</h1><p class="subtitle" id="dateResult">date confirmed ♡</p>
+<button class="continue" onclick="showPage(6)">ONE MORE THING...</button>
+</section>
+
+<section class="page" id="page6">
+<div class="final-card">
+<div class="final-title">♡ for you ♡</div>
+<div class="message" id="typedMessage"></div>
+<div class="signature">— someone who likes you ♡</div>
+</div>
+</section>
+<div class="burst" id="burst"></div>
+</div>
+
+<script>
+let selectedActivity="",selectedDate="";
+function showPage(n){document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));setTimeout(()=>document.getElementById("page"+n).classList.add("active"),80)}
+function sayYes(){heartBurst();setTimeout(()=>showPage(2),600)}
+function moveNo(){const b=document.getElementById("noButton");b.style.position="fixed";const x=Math.random()*(innerWidth-b.offsetWidth-15),y=Math.random()*(innerHeight-b.offsetHeight-15);b.style.left=Math.max(5,x)+"px";b.style.top=Math.max(5,y)+"px"}
+function heartBurst(){const c=document.getElementById("burst"),h=["♡","♥","💗","💕","✦"];for(let i=0;i<18;i++){const e=document.createElement("span");e.className="burst-heart";e.innerText=h[Math.floor(Math.random()*h.length)];e.style.setProperty("--x",((Math.random()-.5)*300)+"px");e.style.setProperty("--y",((Math.random()-.5)*300)+"px");e.style.setProperty("--r",((Math.random()-.5)*90)+"deg");c.appendChild(e);setTimeout(()=>e.remove(),1300)}}
+function confirmDate(){const i=document.getElementById("date");if(!i.value){i.animate([{transform:"translateX(-4px)"},{transform:"translateX(4px)"},{transform:"translateX(0)"}],{duration:250});return}selectedDate=new Date(i.value+"T00:00:00");document.getElementById("dateResult").innerText=selectedDate.toLocaleDateString("en-IN",{day:"2-digit",month:"long",year:"numeric"})+" ♡";showPage(4)}
+function selectActivity(b){document.querySelectorAll(".activity").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");selectedActivity=b.innerText}
+function finishDate(){if(!selectedActivity){document.querySelectorAll(".activity").forEach(b=>b.animate([{transform:"translateX(-3px)"},{transform:"translateX(3px)"},{transform:"translateX(0)"}],{duration:250,iterations:2}));return}let d=selectedDate?selectedDate.toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"}):"";document.getElementById("dateResult").innerText=d+"\n"+selectedActivity+" ♡";heartBurst();setTimeout(()=>showPage(5),500)}
+const message=`i'm really glad you said yes.
+
+i don't know exactly where
+this little adventure will take us,
+but i'm excited to find out.
+
+we'll laugh, talk about random things,
+make some memories,
+and maybe stay out a little too late.
+
+for now, all i know is...
+
+i'm really looking forward
+to seeing you. ♡`;
+let typedStarted=false;
+function typeMessage(){if(typedStarted)return;typedStarted=true;const t=document.getElementById("typedMessage");let i=0;function type(){if(i<message.length){t.innerText+=message[i++];setTimeout(type,message[i-1]==="\n"?80:22)}}type()}
+new MutationObserver(()=>{if(document.getElementById("page6").classList.contains("active"))typeMessage()}).observe(document.getElementById("page6"),{attributes:true});
+document.getElementById("date").min=new Date().toISOString().split("T")[0];
+setInterval(()=>{const e=document.createElement("div");e.className="float-heart";e.innerText=Math.random()>.5?"♡":"♥";e.style.left=Math.random()*95+"%";e.style.bottom="-20px";e.style.animationDuration=4+Math.random()*4+"s";document.getElementById("app").appendChild(e);setTimeout(()=>e.remove(),8000)},1200);
+</script>
+</body>
+</html>
